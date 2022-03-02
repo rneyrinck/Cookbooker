@@ -1,3 +1,4 @@
+// trying to rework this so the webpage is centered around the author, with each cookbook displaying in the authors section
 import { useState } from "react";
 import "./App.css";
 
@@ -50,7 +51,7 @@ function App() {
   const [author, setAuthor] = useState({
     firstName: "",
     lastName: "",
-    cookbooks: [{}]
+    cookbooks: [],
   });
 
   const handleClickAuthor = () => {
@@ -83,7 +84,38 @@ function App() {
       .then(() => fetch("http://localhost:4000/api/authors"))
       .then((response) => response.json())
       .then((data) => setAuthors(data))
-      .then(() => setAuthor({ firstName: "", lastName: "", cookbooks: [{}] }));
+      .then(() => setAuthor({ firstName: "", lastName: "", cookbooks: [] }));
+  };
+
+  // search matching book ID to book array, return that book data
+  const [authorsCookbook, setAuthorsCookbook] = useState();
+
+  const [authorsCookbooks, setAuthorsCookbooks] = useState({ title: "", yearPublished: "" });
+  
+  const bookSearch = (query) => {
+    query.map((items) => {
+      console.log(`http://localhost:4000/api/cookbooks/id/${items}`)
+      fetch(`http://localhost:4000/api/cookbooks/id/${items}`,{
+        headers:{
+          "Content-Type": "application/json",
+        },
+        method: "GET",
+
+      })
+      .then((response) => response.json())
+      // .then((data)=>console.log(data))
+
+      // .then((data) => setAuthorsCookbook(data))
+      // .then(() => setAuthorsCookbooks({ title: "", yearPublished: "" }))
+      // .then(console.log(authorsCookbooks))
+    //    return(
+    //   //  <p>{authorsCookbooks}</p>
+    //  )
+    });
+    
+    // return(
+    //   <p>{authorsCookbooks.title}</p>
+    // )
   };
 
   const authorList = authors.map((author) => (
@@ -91,7 +123,7 @@ function App() {
       <div>
         Author: {author.firstName} {author.lastName}
       </div>
-      <div>Cookbooks: {author.cookbooks[{}]} </div>
+      <div>Cookbooks: {bookSearch(author.cookbooks)}</div>
     </div>
   ));
 
@@ -113,7 +145,7 @@ function App() {
         />
         <button type="Submit">Add Cookbook</button>
       </form>
-{/* author form */}
+      {/* author form */}
       <form onSubmit={handleSubmitAuthor} className="new-author-form">
         <input
           onChange={handleChangeAuthor}
@@ -147,7 +179,7 @@ function App() {
         <button className="author-button" onClick={handleClickAuthor}>
           View authors
         </button>
-          {authorList}
+        {authorList}
       </section>
     </div>
   );
