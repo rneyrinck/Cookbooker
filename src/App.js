@@ -87,6 +87,8 @@ function App() {
       .then(() => setAuthor({ firstName: "", lastName: "", cookbooks: [] }));
   };
 
+
+  // this below code block is an attempt to populate the book data with title and year for each author in the author list
   // search matching book ID to book array, return that book data
   const [authorsCookbook, setAuthorsCookbook] = useState();
 
@@ -123,7 +125,7 @@ function App() {
       <div>
         Author: {author.firstName} {author.lastName}
       </div>
-      <div>Cookbooks: {bookSearch(author.cookbooks)}</div>
+      <div>Cookbooks: {/*{bookSearch(author.cookbooks)}*/}</div>
     </div>
   ));
 
@@ -145,6 +147,12 @@ function App() {
         />
         <button type="Submit">Add Cookbook</button>
       </form>
+      <section className="cookbook-card-list">
+        <button className="cookbook-button" onClick={handleClickCookbook}>
+          View Cookbooks
+        </button>
+        {cookbookList}
+      </section>
       {/* author form */}
       <form onSubmit={handleSubmitAuthor} className="new-author-form">
         <input
@@ -159,6 +167,7 @@ function App() {
           name="lastName"
           placeholder="lastName"
         />
+        {/* non functioning, will shutdown server */}
         <input
           onChange={handleChangeAuthor}
           value={author.cookbooks[{}]}
@@ -168,12 +177,6 @@ function App() {
         <button type="Submit">Add author</button>
       </form>
       {/* cook book list */}
-      <section className="cookbook-card-list">
-        <button className="cookbook-button" onClick={handleClickCookbook}>
-          View Cookbooks
-        </button>
-        {cookbookList}
-      </section>
       {/* author list */}
       <section className="author-card-list">
         <button className="author-button" onClick={handleClickAuthor}>

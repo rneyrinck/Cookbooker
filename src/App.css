@@ -3,8 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px;
+  /* margin: 15px; */
+  height: 100vh;
   gap: 15px;
+  background-color: #282c34;
 }
 
 .App-logo {
@@ -46,4 +48,22 @@ form{
   flex-direction: column;
   width: 300px;
 
+}
+.author-card{
+  border-radius: 5px;
+  background-color: white;
+}
+.author-card-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cookbook-card{
+  border-radius: 5px;
+  background-color: white;
+}
+.cookbook-card-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
