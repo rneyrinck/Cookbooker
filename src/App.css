@@ -2,11 +2,12 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   /* margin: 15px; */
   height: 100vh;
   gap: 15px;
-  background-color: #282c34;
+  /* background-color: #282c34; */
 }
 
 .App-logo {
@@ -21,7 +22,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,7 +52,7 @@ form{
 }
 .author-card{
   border-radius: 5px;
-  background-color: white;
+  background-color: rgb(226, 224, 224);
 }
 .author-card-list{
   display: flex;
@@ -60,10 +61,47 @@ form{
 }
 .cookbook-card{
   border-radius: 5px;
-  background-color: white;
+  background-color: rgb(236, 232, 232);
 }
 .cookbook-card-list{
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+img{
+  /* margin-top: 50px; */
+  width: 300px
+}
+.block{
+  background-color: rgba(128, 128, 128, 0.61);
+  /* width: ; */
+  height: 200px;
+  /* margin-top: 50px;
+  margin-left: -25px;
+  margin-right: -25px; */
+}
+header{
+  background-color: antiquewhite;
+  width: 100vw;
+}
+.header-top{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer{
+  background-color: antiquewhite;
+  width: 100vw;
+  border-top: 1px rgba(128, 128, 128, 0.151) solid;
+  /* height: 200px; */
+}
+div.row{
+  gap: 10px;
+  margin: 10px;
+  background-color: antiquewhite;
+  height: 225px;
+  max-width: 600px;
+  align-items: center;
+  border-radius: 5px;
 }

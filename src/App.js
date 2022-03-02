@@ -50,14 +50,14 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+      <main>
       <Routes>
         <Route path="/" element={<Landing />} />
 
         <Route path="/authors" element={<Authors />} />
         <Route path="/cookbooks" element={<Cookbooks />}></Route>
       </Routes>
-
+      </main>
       <Footer />
     </div>
   );
