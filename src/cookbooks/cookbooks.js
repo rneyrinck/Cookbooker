@@ -1,11 +1,11 @@
 import { useState } from "react";
-import apiUrl from "../apiURL";
+import apiUrl from "./../apiURL";
 const Cookbooks = () =>{
     const [cookbooks, setCookbooks] = useState([]);
     const [cookbook, setCookbook] = useState({ title: "", yearPublished: "" });
     
     const handleClickCookbook = () => {
-      fetch(`${apiUrl}cookbooks`)
+      fetch(apiUrl +`cookbooks`)
         .then((response) => response.json())
         .then((data) => setCookbooks(data));
     };
@@ -24,14 +24,14 @@ const Cookbooks = () =>{
     const handleSubmitCookbook = (event) => {
       event.preventDefault();
       console.log(cookbook);
-      fetch(`${apiUrl}cookbooks`, {
+      fetch(apiUrl +`cookbooks`, {
         headers: {
           "Content-Type": "application/json",
         },
         method: "POST",
         body: JSON.stringify(cookbook),
       })
-        .then(() => fetch(`${apiUrl}cookbooks`))
+        .then(() => fetch(apiUrl +`cookbooks`))
         .then((response) => response.json())
         .then((data) => setCookbooks(data))
         .then(() => setCookbook({ title: "", yearPublished: "" }));
