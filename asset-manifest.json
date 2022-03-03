@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Cookbook-client/static/css/main.85f92d6f.css",
-    "main.js": "/Cookbook-client/static/js/main.f361ff04.js",
-    "static/js/787.7df841e1.chunk.js": "/Cookbook-client/static/js/787.7df841e1.chunk.js",
-    "index.html": "/Cookbook-client/index.html",
-    "main.85f92d6f.css.map": "/Cookbook-client/static/css/main.85f92d6f.css.map",
-    "main.f361ff04.js.map": "/Cookbook-client/static/js/main.f361ff04.js.map",
-    "787.7df841e1.chunk.js.map": "/Cookbook-client/static/js/787.7df841e1.chunk.js.map"
+    "main.css": "/rob-neyrinck/Cookbook-client/static/css/main.85f92d6f.css",
+    "main.js": "/rob-neyrinck/Cookbook-client/static/js/main.021eba8b.js",
+    "static/js/787.7df841e1.chunk.js": "/rob-neyrinck/Cookbook-client/static/js/787.7df841e1.chunk.js",
+    "index.html": "/rob-neyrinck/Cookbook-client/index.html",
+    "main.85f92d6f.css.map": "/rob-neyrinck/Cookbook-client/static/css/main.85f92d6f.css.map",
+    "main.021eba8b.js.map": "/rob-neyrinck/Cookbook-client/static/js/main.021eba8b.js.map",
+    "787.7df841e1.chunk.js.map": "/rob-neyrinck/Cookbook-client/static/js/787.7df841e1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.85f92d6f.css",
-    "static/js/main.f361ff04.js"
+    "static/js/main.021eba8b.js"
   ]
 }
