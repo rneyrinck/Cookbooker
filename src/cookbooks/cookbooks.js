@@ -1,5 +1,5 @@
 import { useState } from "react";
-import apiUrl from "../../apiURL";
+import apiUrl from "../apiURL";
 const Cookbooks = () =>{
     const [cookbooks, setCookbooks] = useState([]);
     const [cookbook, setCookbook] = useState({ title: "", yearPublished: "" });

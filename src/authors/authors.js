@@ -1,5 +1,5 @@
 import { useState } from "react";
-import apiUrl from "../../apiURL";
+import apiUrl from "../apiURL";
 const Authors = () => {
     const [authors, setAuthors] = useState([]);
     const [author, setAuthor] = useState({
