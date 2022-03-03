@@ -1,6 +1,6 @@
 {
   "name": "cookbook-client",
-  "homepage":"https://rob-neyrinck.github.io/Cookbook-client",
+  "homepage":"https://pages.git.generalassemb.ly/rob-neyrinck/Cookbook-client/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
