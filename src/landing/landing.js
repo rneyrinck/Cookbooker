@@ -5,9 +5,8 @@ const Landing = () => {
     <Container fluid>
       <Row>
         <Col>
-          This is a simple app to add and store authors of cookbooks, and then
-          display a list of cookbooks that can be added to as well. Built with
-          react/react-bootstrap on the front end, express/node on the backend, database managed by mongoDB and hosted on Heroku.
+          This app allows users to add their favorite cookbooks and authors for other to view. Built with
+          react/react-bootstrap, express/node, mongoDB and hosted on Heroku.
         </Col>
         <Col><img src="https://media.istockphoto.com/photos/food-backgrounds-table-filled-with-large-variety-of-food-picture-id1155240408?k=20&m=1155240408&s=612x612&w=0&h=Zvr3TwVQ-wlfBnvGrgJCtv-_P_LUcIK301rCygnirbk=" alt=""/></Col>
         {/* <Col>Quote ffrom famous chef</Col> */}
