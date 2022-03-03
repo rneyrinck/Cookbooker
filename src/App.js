@@ -14,36 +14,36 @@ function App() {
 
   // this below code block is an attempt to populate the book data with title and year for each author in the author list
   // search matching book ID to book array, return that book data
-  const [authorsCookbook, setAuthorsCookbook] = useState();
+  // const [authorsCookbook, setAuthorsCookbook] = useState();
 
-  const [authorsCookbooks, setAuthorsCookbooks] = useState({
-    title: "",
-    yearPublished: "",
-  });
+  // const [authorsCookbooks, setAuthorsCookbooks] = useState({
+  //   title: "",
+  //   yearPublished: "",
+  // });
 
-  const bookSearch = (query) => {
-    query.map((items) => {
-      console.log(`http://localhost:4000/api/cookbooks/id/${items}`);
-      fetch(`http://localhost:4000/api/cookbooks/id/${items}`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "GET",
-      }).then((response) => response.json());
-      // .then((data)=>console.log(data))
+  // const bookSearch = (query) => {
+  //   query.map((items) => {
+  //     console.log(`http://localhost:4000/api/cookbooks/id/${items}`);
+  //     fetch(`http://localhost:4000/api/cookbooks/id/${items}`, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       method: "GET",
+  //     }).then((response) => response.json());
+  //     // .then((data)=>console.log(data))
 
-      // .then((data) => setAuthorsCookbook(data))
-      // .then(() => setAuthorsCookbooks({ title: "", yearPublished: "" }))
-      // .then(console.log(authorsCookbooks))
-      //    return(
-      //   //  <p>{authorsCookbooks}</p>
-      //  )
-    });
+  //     // .then((data) => setAuthorsCookbook(data))
+  //     // .then(() => setAuthorsCookbooks({ title: "", yearPublished: "" }))
+  //     // .then(console.log(authorsCookbooks))
+  //     //    return(
+  //     //   //  <p>{authorsCookbooks}</p>
+  //     //  )
+  //   });
 
-    // return(
-    //   <p>{authorsCookbooks.title}</p>
-    // )
-  };
+  //   // return(
+  //   //   <p>{authorsCookbooks.title}</p>
+  //   // )
+  // };
 
   
 

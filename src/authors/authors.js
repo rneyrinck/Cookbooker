@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import apiUrl from "../../apiURL";
 const Authors = () => {
     const [authors, setAuthors] = useState([]);
     const [author, setAuthor] = useState({
@@ -9,7 +9,7 @@ const Authors = () => {
     });
   
     const handleClickAuthor = () => {
-      fetch("http://localhost:4000/api/authors")
+      fetch(`${apiUrl}authors`)
         .then((response) => response.json())
         .then((data) => setAuthors(data));
     };
@@ -28,14 +28,14 @@ const Authors = () => {
     const handleSubmitAuthor = (event) => {
       event.preventDefault();
       console.log(author);
-      fetch("http://localhost:4000/api/authors", {
+      fetch(`${apiUrl}authors`, {
         headers: {
           "Content-Type": "application/json",
         },
         method: "POST",
         body: JSON.stringify(author),
       })
-        .then(() => fetch("http://localhost:4000/api/authors"))
+        .then(() => fetch(`${apiUrl}authors`))
         .then((response) => response.json())
         .then((data) => setAuthors(data))
         .then(() => setAuthor({ firstName: "", lastName: "", cookbooks: [] }));
