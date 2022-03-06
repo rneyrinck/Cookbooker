@@ -134,12 +134,12 @@ const Authors = () => {
         </h3>
       </div>
       <div>
-        Cookbooks:{" "}
+        <h3>Cookbooks:</h3>
         {author.cookbooks.map((items) => {
           return (
             <div key={items._id}>
-              <h4>{items.title}</h4>
-              <h5>{items.yearPublished}</h5>
+              <h5>{items.title}</h5>
+              <h6>{items.yearPublished}</h6>
             </div>
           );
         })}
