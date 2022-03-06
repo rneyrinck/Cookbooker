@@ -43,7 +43,9 @@ const Authors = () => {
   const authorList = authors.map((author) => (
     <div key={author._id} className="author-card">
       <div>
+        <h3>
         Author: {author.firstName} {author.lastName}
+        </h3>
       </div>
       <div>
         Cookbooks:{" "}
@@ -74,12 +76,12 @@ const Authors = () => {
           placeholder="lastName"
         />
         {/* non functioning, will shutdown server */}
-        <input
+        {/* <input
           onChange={handleChangeAuthor}
           value={author.cookbooks[{}]}
           name="cookbooks"
           placeholder="cookbooks"
-        />
+        /> */}
         <button type="Submit">Add author</button>
       </form>
       {/* cook book list */}
