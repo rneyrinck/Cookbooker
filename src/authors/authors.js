@@ -9,7 +9,6 @@ const Authors = () => {
     lastName: "",
     cookbooks: [],
   });
-  
 
   const handleClickAuthor = () => {
     fetch(apiUrl + `authors`)
@@ -48,11 +47,11 @@ const Authors = () => {
   //   fetch(apiUrl + `authors/authorId` + )
   // }
 
-  function Example(authorId) {
+  function Example(props) {
     const [newbook, setNewBook] = useState({
       title: "",
-      yearPublished: ""
-    })
+      yearPublished: "",
+    });
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -68,11 +67,12 @@ const Authors = () => {
         return editedBook;
       });
     };
-  
+
     const handleSubmitNewBook = (event) => {
       event.preventDefault();
-      
-      fetch(apiUrl + `authors/authorId/` + author._id, {
+      console.log(apiUrl + `authors/authorId/` + props.authorId.toString());
+      console.log(newbook)
+      fetch(apiUrl + `authors/authorId/` + props.authorId.toString(), {
         headers: {
           "Content-Type": "application/json",
         },
@@ -96,27 +96,28 @@ const Authors = () => {
             <Modal.Title>Modal heading</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-          <form onSubmit={handleSubmitNewBook} className="new-cookbook-form">
-            <input
-              onChange={handleChangeNewBook}
-              value={newbook.title}
-              name="title"
-              placeholder="title"
-            />
-            <input
-              onChange={handleChangeNewBook}
-              value={newbook.yearPublished}
-              name="yearPublished"
-              placeholder="yearPublished"
-            />
-            <Button variant="primary" type="submit" onClick={handleClose}>
-              Save Changes
-            </Button>
+            <form onSubmit={handleSubmitNewBook} className="new-cookbook-form">
+              <input
+                onChange={handleChangeNewBook}
+                value={newbook.title}
+                name="title"
+                placeholder="title"
+              />
+              <input
+                onChange={handleChangeNewBook}
+                value={newbook.yearPublished}
+                name="yearPublished"
+                placeholder="yearPublished"
+              />
+              <button type="submit">Submit</button>
             </form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>
               Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
             </Button>
           </Modal.Footer>
         </Modal>
@@ -136,13 +137,13 @@ const Authors = () => {
         Cookbooks:{" "}
         {author.cookbooks.map((items) => {
           return (
-            <div>
+            <div key={items._id}>
               <h4>{items.title}</h4>
               <h5>{items.yearPublished}</h5>
             </div>
           );
         })}
-        <Example authorId={author._id}/>
+        <Example authorId={author._id} />
       </div>
     </div>
   ));
