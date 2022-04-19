@@ -11,7 +11,7 @@ Best,
 
 Robert
 
-[Deployed Link](https://pages.git.generalassemb.ly/rob-neyrinck/Cookbook-client/#/cookbooks) 
+[Deployed Link](https://pages.git.generalassemb.ly/rob-neyrinck/Cookbook-client/) 
 
 ## Componenents
 
@@ -26,3 +26,28 @@ Robert
 | CookbookFormModal     |    Displays modal for adding a new cookbook to an existing author            |
 | Footer    |          Renders the footer includes my name         |
 
+## Code for API Call
+Using a fetch request on a custom URL to pull data from the database.
+
+This code snippet takes the base URL and adds the selected authors name(as a prop in useState) as a string and then performs a PATCH request to add a new book to an existing author.
+
+```jsx
+
+    const handleSubmitNewBook = (event) => {
+      event.preventDefault();
+      console.log(apiUrl + `authors/authorId/` + props.authorId.toString());
+      console.log(newbook)
+      fetch(apiUrl + `authors/authorId/` + props.authorId.toString(), {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "PATCH",
+        body: JSON.stringify(newbook),
+      })
+        .then(() => fetch(apiUrl + "authors"))
+        .then((response) => response.json())
+        .then((data) => setAuthors(data))
+        .then(() => setNewBook({ title: "", yearPublished: "" }));
+    };
+    
+ ```
